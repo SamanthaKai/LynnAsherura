@@ -44,7 +44,8 @@ function Composition() {
       </figure>
 
       {/* Floating detail chips (facts from her CV) */}
-      <div className="card absolute -left-6 top-[18%] hidden items-center gap-3 px-4 py-3 sm:flex lg:-left-14">
+      {/* Chips sit clear of her face: this one above the head, the next beside the arm. */}
+      <div data-chip className="card absolute -left-6 -top-7 hidden items-center gap-3 px-4 py-3 sm:flex lg:-left-14">
         <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
           <GraduationCap className="h-4 w-4" aria-hidden="true" />
         </span>
@@ -53,7 +54,7 @@ function Composition() {
           <span className="text-grey-500">Mbarara University of S&amp;T</span>
         </span>
       </div>
-      <div className="card absolute -right-4 top-[52%] hidden items-center gap-3 px-4 py-3 sm:flex lg:-right-10">
+      <div data-chip className="card absolute -right-4 top-[52%] hidden items-center gap-3 px-4 py-3 sm:flex lg:-right-10">
         <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-peach-100 text-peach-700">
           <ShieldCheck className="h-4 w-4" aria-hidden="true" />
         </span>
