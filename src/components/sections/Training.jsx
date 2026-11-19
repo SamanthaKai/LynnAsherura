@@ -8,10 +8,10 @@ export default function Training() {
       index="05"
       eyebrow="Training & certifications"
       title="Building beyond the degree."
-      intro="Courses in leadership, business and security that round out a technical education."
+      intro="Certified courses in network security, web optimisation, business, soft skills and leadership that round out a technical education."
       className="border-y border-grey-200 bg-white"
     >
-      <ul className="grid gap-5 md:grid-cols-3">
+      <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {training.map((t, i) => (
           <Reveal
             as="li"
@@ -21,7 +21,7 @@ export default function Training() {
           >
             {/* Header band */}
             <div className="flex items-center justify-between border-b border-grey-200 px-6 py-4">
-              <span className="text-3xl font-extrabold tracking-tight text-ink">{t.year}</span>
+              <span className="text-xl font-extrabold tracking-tight text-ink">{t.date}</span>
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-blue-600 ring-1 ring-grey-200 transition-colors group-hover:bg-blue-600 group-hover:text-white group-hover:ring-blue-600">
                 <Icon name={t.icon} className="h-[1.1rem] w-[1.1rem]" />
               </span>

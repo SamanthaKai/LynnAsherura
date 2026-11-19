@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import { experience } from '../../data/content.js'
+import { experience, leadership } from '../../data/content.js'
 import { IconBadge, Reveal, Section } from '../ui/index.jsx'
 
 export default function Experience() {
@@ -13,7 +13,7 @@ export default function Experience() {
           Learning on the job, <span className="accent text-blue-600">showing up</span> year after year.
         </>
       }
-      intro="Industrial training in a professional IT environment, and four consecutive years of volunteer service."
+      intro="Industrial training in a professional IT environment, four consecutive years of volunteer coordination, and leadership roles from school onward."
     >
       <div className="grid gap-6 lg:grid-cols-2">
         {experience.map((x, i) => (
@@ -56,6 +56,28 @@ export default function Experience() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-14">
+        <h3 className="text-xs font-bold uppercase tracking-label text-grey-500">Leadership &amp; extra-curricular</h3>
+      </Reveal>
+      <ul className="mt-5 grid gap-4 md:grid-cols-3">
+        {leadership.map((l, i) => (
+          <Reveal
+            as="li"
+            key={l.role}
+            delay={i * 80}
+            className="rounded-2xl border border-grey-200 bg-white p-6 transition-shadow hover:shadow-card"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <IconBadge name={l.icon} tone={i % 2 ? 'peach' : 'blue'} size="sm" />
+              <span className="text-xs font-bold tabular-nums text-grey-500">{l.period}</span>
+            </div>
+            <h4 className="mt-5 font-bold leading-snug tracking-tight">{l.role}</h4>
+            <p className="mt-1 text-sm font-semibold text-grey-500">{l.org}</p>
+            <p className="mt-3 text-sm leading-relaxed text-grey-700">{l.text}</p>
+          </Reveal>
+        ))}
+      </ul>
     </Section>
   )
 }

@@ -1,4 +1,4 @@
-import { languages, profile, qualities } from '../../data/content.js'
+import { highlights, languages, profile, qualities } from '../../data/content.js'
 import { IconBadge, Reveal, Section } from '../ui/index.jsx'
 
 export default function About() {
@@ -13,21 +13,31 @@ export default function About() {
         </>
       }
     >
+      <Reveal as="dl" className="mb-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-grey-200 bg-grey-200 lg:grid-cols-4">
+        {highlights.map((h) => (
+          <div key={h.label} className="flex flex-col-reverse bg-white p-5 sm:p-6">
+            <dt className="mt-1.5 text-sm leading-snug text-grey-500">{h.label}</dt>
+            <dd className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">{h.value}</dd>
+          </div>
+        ))}
+      </Reveal>
+
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
         <Reveal className="lg:col-span-5">
           <div className="space-y-5 text-[1.05rem] leading-relaxed text-grey-700">
             <p>
-              I’m {profile.firstName}, an Information Technology graduate from {profile.university}. I’m motivated, I
-              learn quickly, and I enjoy the point where technology meets the people who use it.
+              I’m {profile.firstName}, an Information Technology graduate from {profile.university}, where I earned a
+              Bachelor of Information Technology with {profile.honours} Honours (CGPA {profile.cgpa}).
             </p>
             <p>
-              My degree gave me a broad foundation across software, data, networks, security and information systems.
-              Alongside it, I’ve built up business knowledge through the NSSF Business Foundational Course and
-              leadership experience through the Watoto Leadership Course.
+              I’m certified in Network Security and Website Optimisation, and my industrial training at The WIT
+              Technologies gave me hands-on experience in hardware and software troubleshooting, networking, CCTV
+              installation and web development.
             </p>
             <p>
-              I bring strong communication, a steady approach to problems and a genuine willingness to learn, and I’m
-              looking for opportunities where I can put all three to work.
+              Beyond the technical side, I bring business fundamentals from the NSSF Hi-Innovator course, leadership
+              from school and church roles, and four years of volunteer coordination. I’m looking for opportunities
+              where I can put all of it to work.
             </p>
           </div>
 

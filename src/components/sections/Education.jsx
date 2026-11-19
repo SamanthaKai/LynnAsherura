@@ -57,6 +57,20 @@ export default function Education() {
                   </span>
                 )}
               </div>
+              {e.details && (
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {e.details.map((d) => (
+                    <li
+                      key={d}
+                      className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                        e.highlight ? 'bg-white text-blue-700 ring-1 ring-blue-100' : 'bg-white text-grey-700 ring-1 ring-grey-200'
+                      }`}
+                    >
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              )}
               {e.highlight && (
                 <a
                   href="#coursework"

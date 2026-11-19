@@ -51,7 +51,7 @@ function Composition() {
         </span>
         <span className="text-xs leading-tight">
           <span className="block font-bold">Bachelor of IT</span>
-          <span className="text-grey-500">Mbarara University of S&amp;T</span>
+          <span className="text-grey-500">Second Class Upper · CGPA {profile.cgpa}</span>
         </span>
       </div>
       <div data-chip className="card absolute -right-4 top-[52%] hidden items-center gap-3 px-4 py-3 sm:flex lg:-right-10">
@@ -60,7 +60,7 @@ function Composition() {
         </span>
         <span className="text-xs leading-tight">
           <span className="block font-bold">Network Security</span>
-          <span className="text-grey-500">Certified 2025</span>
+          <span className="text-grey-500">The Open University · 2025</span>
         </span>
       </div>
       <div className="absolute -bottom-3 left-8 hidden items-center gap-2 rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white shadow-lift sm:flex">
@@ -99,8 +99,8 @@ export default function Hero() {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-grey-500">
-              An Information Technology graduate passionate about technology, continuous learning, problem-solving and
-              creating meaningful digital solutions.
+              A motivated, detail-oriented IT graduate with a Second Class Upper degree, certified in network security
+              and website optimisation, and passionate about creating meaningful digital solutions.
             </p>
           </Reveal>
           <Reveal delay={240} className="mt-9 flex flex-col gap-3 sm:flex-row">
