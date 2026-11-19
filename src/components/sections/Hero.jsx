@@ -1,122 +1,82 @@
-import { ArrowDown, ArrowRight, GraduationCap, MapPin, ShieldCheck } from 'lucide-react'
-import { profile } from '../../data/content.js'
+import { ArrowRight } from 'lucide-react'
+import { heroFacts, profile } from '../../data/content.js'
 import { ButtonLink, Reveal } from '../ui/index.jsx'
 
-// Portrait card with a peach blueprint backdrop and a few factual detail chips.
-function Composition() {
+// Portrait set on two flat shapes: a blue block offset behind it and a peach disc at the corner.
+function Portrait() {
   return (
-    <div className="relative mx-auto w-full max-w-[25rem] sm:max-w-[26rem]">
-      {/* Offset backdrop */}
+    <div className="relative mx-auto w-full max-w-[22rem] sm:max-w-[25rem] lg:ml-auto lg:mr-0">
+      <div className="absolute -bottom-4 -right-4 left-12 top-14 rounded-xl bg-blue sm:-bottom-6 sm:-right-6" aria-hidden="true" />
       <div
-        className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.9rem] bg-peach-200 sm:translate-x-6 sm:translate-y-6"
+        className="absolute -left-5 -top-5 h-24 w-24 rounded-full bg-peach sm:-left-8 sm:-top-8 sm:h-32 sm:w-32"
         aria-hidden="true"
-      >
-        <div className="grid-bg h-full w-full rounded-[1.9rem] opacity-70" />
-      </div>
-
-      <figure className="relative rounded-[1.9rem] border border-grey-200 bg-white p-2.5 shadow-lift">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] bg-grey-100">
-          <img
-            src="/images/asherura-800.webp"
-            srcSet="/images/asherura-480.webp 480w, /images/asherura-800.webp 800w"
-            sizes="(min-width: 640px) 26rem, 90vw"
-            width="800"
-            height="1000"
-            alt="Portrait of Asherura Marilynn, smiling, in a red dress"
-            fetchpriority="high"
-            decoding="async"
-            className="h-full w-full object-cover object-top"
-          />
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent"
-            aria-hidden="true"
-          />
-          <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-white">
-            <span>
-              <span className="block text-lg font-extrabold tracking-tight">{profile.name}</span>
-              <span className="block text-sm text-white/80">{profile.role}</span>
-            </span>
-            <span className="shrink-0 rounded-full bg-white/15 px-3 py-1 text-xs font-bold ring-1 ring-inset ring-white/25 backdrop-blur-sm">
-              Class of 2026
-            </span>
-          </figcaption>
-        </div>
-      </figure>
-
-      {/* Floating detail chips (facts from her CV) */}
-      {/* Chips sit clear of her face: this one above the head, the next beside the arm. */}
-      <div data-chip className="card absolute -left-6 -top-7 hidden items-center gap-3 px-4 py-3 sm:flex lg:-left-14">
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
-          <GraduationCap className="h-4 w-4" aria-hidden="true" />
-        </span>
-        <span className="text-xs leading-tight">
-          <span className="block font-bold">Bachelor of IT</span>
-          <span className="text-grey-500">Second Class Upper · CGPA {profile.cgpa}</span>
-        </span>
-      </div>
-      <div data-chip className="card absolute -right-4 top-[52%] hidden items-center gap-3 px-4 py-3 sm:flex lg:-right-10">
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-peach-100 text-peach-700">
-          <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-        </span>
-        <span className="text-xs leading-tight">
-          <span className="block font-bold">Network Security</span>
-          <span className="text-grey-500">The Open University · 2025</span>
-        </span>
-      </div>
-      <div className="absolute -bottom-3 left-8 hidden items-center gap-2 rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white shadow-lift sm:flex">
-        <MapPin className="h-3.5 w-3.5 text-peach-300" aria-hidden="true" />
-        {profile.location}
-      </div>
+      />
+      <img
+        src="/images/asherura-800.webp"
+        srcSet="/images/asherura-480.webp 480w, /images/asherura-800.webp 800w"
+        sizes="(min-width: 640px) 25rem, 88vw"
+        width="800"
+        height="1000"
+        alt="Portrait of Asherura Marilynn, smiling, in a red dress"
+        fetchpriority="high"
+        decoding="async"
+        className="relative aspect-[4/5] w-full rounded-xl bg-grey object-cover object-top"
+      />
     </div>
   )
 }
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-20 pt-28 sm:pb-28 sm:pt-36" aria-labelledby="hero-title">
-      {/* Soft background wash, kept very light */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[38rem] grid-bg [mask-image:linear-gradient(to_bottom,black,transparent)]"
-        aria-hidden="true"
-      />
-      <div className="frame grid items-center gap-16 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-6 xl:col-span-6">
+    <section id="top" aria-labelledby="hero-title" className="relative overflow-hidden bg-white pt-28 sm:pt-36">
+      <div className="frame relative grid items-center gap-16 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-7">
           <Reveal>
-            <p className="inline-flex items-center gap-2.5 rounded-full border border-grey-200 bg-white py-1.5 pl-1.5 pr-4 text-xs font-semibold text-grey-700 shadow-card">
-              <span className="rounded-full bg-peach-100 px-2.5 py-0.5 font-bold text-peach-700">2026</span>
-              Information Technology Graduate
+            <p className="text-[0.95rem] font-semibold text-blue-700">
+              {profile.role}
+              <span className="mx-2.5 text-charcoal/25" aria-hidden="true">
+                /
+              </span>
+              <span className="font-medium text-charcoal-muted">{profile.location}</span>
             </p>
           </Reveal>
-          <Reveal delay={80}>
-            <p className="mt-8 text-sm font-bold uppercase tracking-label text-blue-700">{profile.name}</p>
+          <Reveal delay={60}>
             <h1
               id="hero-title"
-              className="mt-3 text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-6xl xl:text-[4.4rem]"
+              className="mt-6 font-display text-[clamp(3.7rem,13.5vw,7.4rem)] font-medium leading-[0.9] tracking-[-0.035em]"
             >
-              Technology, <span className="accent text-blue-600">People</span>
-              <br className="hidden sm:block" /> &amp; Possibilities.
+              {profile.firstName}
+              <br />
+              <span className="text-blue">{profile.lastName}</span>
             </h1>
           </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-grey-500">
-              A motivated, detail-oriented IT graduate with a Second Class Upper degree, certified in network security
-              and website optimisation, and passionate about creating meaningful digital solutions.
-            </p>
+          <Reveal delay={120}>
+            <p className="mt-8 max-w-[34rem] text-lg leading-relaxed text-charcoal-soft">{profile.intro}</p>
           </Reveal>
-          <Reveal delay={240} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="#contact">
-              Contact me
+          <Reveal delay={180} className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href="#experience">
+              View my experience
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </ButtonLink>
-            <ButtonLink href="#about" variant="secondary">
-              Explore my background
-              <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+            <ButtonLink href="#contact" variant="secondary">
+              Get in touch
             </ButtonLink>
           </Reveal>
         </div>
 
-        <Reveal delay={200} className="lg:col-span-6 lg:pl-8 xl:pl-14">
-          <Composition />
+        <Reveal delay={140} className="lg:col-span-5">
+          <Portrait />
+        </Reveal>
+      </div>
+
+      <div className="frame relative mt-20 sm:mt-24">
+        <Reveal as="dl" className="grid grid-cols-2 gap-x-6 gap-y-2 pb-14 sm:gap-x-10 lg:grid-cols-4">
+          {heroFacts.map((f) => (
+            <div key={f.term} className="border-t border-charcoal/15 py-5">
+              <dt className="text-sm text-charcoal-muted">{f.term}</dt>
+              <dd className="mt-1.5 font-display text-xl leading-snug sm:text-2xl">{f.detail}</dd>
+            </div>
+          ))}
         </Reveal>
       </div>
     </section>

@@ -1,62 +1,43 @@
-import { skills } from '../../data/content.js'
-import { Icon, IconBadge, Reveal, Section } from '../ui/index.jsx'
+import { skillGroups } from '../../data/content.js'
+import { Reveal, Section } from '../ui/index.jsx'
+
+const KINDS = {
+  technical: { label: 'Technical', rule: 'bg-blue' },
+  professional: { label: 'Professional', rule: 'bg-peach' },
+}
 
 export default function Skills() {
   return (
     <Section
       id="skills"
-      index="03"
-      eyebrow="Skills"
-      title="Technical foundations, professional strengths."
-      intro="The tools and fundamentals from my studies and certification, paired with the people skills I bring to every team."
-      className="border-y border-grey-200 bg-white"
+      title="Skills"
+      note="From my degree, certifications and industrial training, alongside the people skills I bring to a team."
+      tone="grey"
     >
-      <div className="grid gap-6 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <Reveal>
-            <h3 className="text-xs font-bold uppercase tracking-label text-grey-500">Technical</h3>
-          </Reveal>
-          <ul className="mt-5 space-y-4">
-            {skills.technical.map((s, i) => (
-              <Reveal
-                as="li"
-                key={s.title}
-                delay={i * 70}
-                className="group flex items-start gap-5 rounded-2xl border border-grey-200 bg-grey-50/60 p-6 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-card"
-              >
-                <IconBadge name={s.icon} />
-                <div>
-                  <h4 className="text-base font-bold tracking-tight">{s.title}</h4>
-                  <p className="mt-1.5 text-sm leading-relaxed text-grey-500">{s.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-
-        <Reveal delay={120} className="lg:col-span-5">
-          <h3 className="text-xs font-bold uppercase tracking-label text-grey-500">Professional</h3>
-          <div className="grid-bg-dark relative mt-5 overflow-hidden rounded-2xl bg-ink p-6 text-white sm:p-8">
-            <div
-              className="pointer-events-none absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-blue-600/30 blur-3xl"
-              aria-hidden="true"
-            />
-            <ul className="relative space-y-1">
-              {skills.professional.map((s) => (
-                <li
-                  key={s.title}
-                  className="flex items-center gap-4 border-b border-white/10 py-4 last:border-b-0"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.07] text-peach-300 ring-1 ring-inset ring-white/10">
-                    <Icon name={s.icon} className="h-4 w-4" />
-                  </span>
-                  <span className="text-[1.05rem] font-bold tracking-tight">{s.title}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
-      </div>
+      <ul className="grid gap-4 sm:grid-cols-2">
+        {skillGroups.map((g, i) => {
+          const kind = KINDS[g.kind]
+          return (
+            <Reveal
+              as="li"
+              key={g.title}
+              delay={(i % 2) * 70}
+              className={`card card-hover relative overflow-hidden p-6 sm:p-7 ${g.wide ? 'sm:col-span-2' : ''}`}
+            >
+              <span className={`absolute inset-x-0 top-0 h-1 ${kind.rule}`} aria-hidden="true" />
+              <p className="text-sm text-charcoal-muted">{kind.label}</p>
+              <h3 className="mt-1 font-display text-2xl leading-tight">{g.title}</h3>
+              <ul className={`mt-5 ${g.wide ? 'grid gap-x-8 sm:grid-cols-2' : ''}`}>
+                {g.items.map((s) => (
+                  <li key={s} className="border-t border-grey-300 py-2.5 text-[0.97rem]">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          )
+        })}
+      </ul>
     </Section>
   )
 }

@@ -5,21 +5,16 @@
 export const profile = {
   name: 'Asherura Marilynn',
   firstName: 'Asherura',
+  lastName: 'Marilynn',
   role: 'Information Technology Graduate',
   location: 'Mbarara, Uganda',
-  // Email and phone are deliberately not published. The contact form delivers
-  // through Web3Forms; the key below is a public form ID, not her address.
   university: 'Mbarara University of Science and Technology',
-  honours: 'Second Class Upper',
-  cgpa: '3.69',
+  intro:
+    'An Information Technology graduate from Mbarara University of Science and Technology, certified in network security and website optimisation, with hands-on training in technical support, networking and web development.',
+  // Public profiles (e.g. { label: 'LinkedIn', href: 'https://…' }). Add real ones only;
+  // the contact section lists them automatically. Email and phone stay private.
+  links: [],
 }
-
-export const highlights = [
-  { value: '3.69', label: 'CGPA, Second Class Upper' },
-  { value: '9', label: 'Certificates & courses completed' },
-  { value: '4', label: 'Years volunteering at ASSU mocks' },
-  { value: '3', label: 'Languages spoken' },
-]
 
 export const contactForm = {
   endpoint: 'https://api.web3forms.com/submit',
@@ -31,72 +26,99 @@ export const nav = [
   { id: 'education', label: 'Education' },
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
-  { id: 'training', label: 'Training' },
+  { id: 'certifications', label: 'Certifications' },
   { id: 'contact', label: 'Contact' },
 ]
 
+export const heroFacts = [
+  { term: 'Degree', detail: 'BIT, Second Class Upper' },
+  { term: 'CGPA', detail: '3.69' },
+  { term: 'Graduated', detail: '29 October 2026' },
+  { term: 'Languages', detail: 'English, Runyankole, Luganda' },
+]
+
+export const about = {
+  // The marked word gets a soft peach underline.
+  lede: { before: 'I enjoy the point where technology meets the ', mark: 'people', after: ' who use it.' },
+  paragraphs: [
+    'I’m Asherura, a detail-oriented Information Technology graduate from Mbarara University of Science and Technology, where I earned a Bachelor of Information Technology with Second Class Upper Honours and a CGPA of 3.69.',
+    'I’m certified in Network Security through The Open University and in Website Strategy, Enhancement and Optimisation through APHRC. My industrial training at The WIT Technologies gave me hands-on experience in hardware and software troubleshooting, networking, CCTV installation and web development.',
+    'Beyond the technical side, I bring business fundamentals from the NSSF Hi-Innovator course, leadership from school and church roles, and four years of volunteer coordination. I’m looking for opportunities where I can put all of it to work.',
+  ],
+  interests: [
+    'Network security',
+    'Website strategy and optimisation',
+    'IT and technical support',
+    'Web and mobile development',
+    'Entrepreneurship',
+  ],
+}
+
 export const qualities = [
   {
-    icon: 'MessageCircle',
     title: 'Communication',
     text: 'Clear, considerate communication with colleagues, customers and the people a team serves.',
   },
   {
-    icon: 'Users',
-    title: 'Teamwork & leadership',
+    title: 'Teamwork and leadership',
     text: 'Comfortable working within a team and stepping up to organise when it is needed.',
   },
   {
-    icon: 'Lightbulb',
     title: 'Problem-solving',
     text: 'Breaks a problem into parts and works through it calmly, one step at a time.',
   },
   {
-    icon: 'HeartHandshake',
     title: 'Emotional intelligence',
     text: 'Reads the room, stays composed and keeps the needs of others in view.',
   },
   {
-    icon: 'Sprout',
     title: 'Willingness to learn',
     text: 'Nine certificates and courses beyond the degree, and always looking for the next one.',
   },
   {
-    icon: 'Clock',
     title: 'Time management',
     text: 'Plans work around deadlines and follows through on commitments.',
   },
 ]
 
-export const education = [
+export const languages = [
+  { name: 'English', level: 'Very fluent' },
+  { name: 'Runyankole', level: 'Fluent' },
+  { name: 'Luganda', level: 'Fluent' },
+]
+
+export const degree = {
+  title: 'Bachelor of Information Technology',
+  school: 'Mbarara University of Science and Technology',
+  period: '2022 – 2026',
+  facts: [
+    { term: 'Classification', detail: 'Second Class Honours, Upper Division' },
+    { term: 'CGPA', detail: '3.69' },
+    { term: 'Graduated', detail: '29 October 2026' },
+  ],
+}
+
+export const schooling = [
   {
-    title: 'Bachelor of Information Technology',
-    school: 'Mbarara University of Science and Technology',
-    period: '2022 – 2026',
-    level: 'Degree',
-    highlight: true,
-    details: ['Second Class Honours (Upper Division)', 'CGPA 3.69', 'Graduated 29 October 2026'],
-  },
-  {
-    title: 'Uganda Advanced Certificate of Education (UACE)',
+    title: 'Uganda Advanced Certificate of Education',
+    short: 'UACE',
     school: 'Ntungamo High School',
     period: '2020 – 2022',
-    level: 'A-Level',
-    details: ['Three principal passes, two subsidiary passes'],
+    result: 'Three principal passes, two subsidiary passes',
   },
   {
-    title: 'Uganda Certificate of Education (UCE)',
+    title: 'Uganda Certificate of Education',
+    short: 'UCE',
     school: 'Ntungamo High School',
     period: '2016 – 2019',
-    level: 'O-Level',
-    details: ['Division 1 (aggregate 30)'],
+    result: 'Division 1, aggregate 30',
   },
   {
-    title: 'Primary Leaving Examination (PLE)',
+    title: 'Primary Leaving Examination',
+    short: 'PLE',
     school: 'Mbarara Parents Primary School',
     period: '2006 – 2015',
-    level: 'Primary',
-    details: ['Division 2 (aggregate 14)'],
+    result: 'Division 2, aggregate 14',
   },
 ]
 
@@ -104,7 +126,7 @@ export const education = [
 export const coursework = [
   {
     id: 'software',
-    icon: 'Code2',
+    tab: 'Software',
     title: 'Software & Systems',
     blurb: 'How software is designed, built and run, from first principles to administration.',
     units: [
@@ -119,7 +141,7 @@ export const coursework = [
   },
   {
     id: 'data',
-    icon: 'Database',
+    tab: 'Data & AI',
     title: 'Data, AI & Computing',
     blurb: 'Storing, querying and reasoning about data, and the methods behind computing research.',
     units: [
@@ -134,7 +156,7 @@ export const coursework = [
   },
   {
     id: 'networks',
-    icon: 'Network',
+    tab: 'Networks',
     title: 'Networks & Emerging Technology',
     blurb: 'How devices connect and communicate, and the technologies built on top of them.',
     units: [
@@ -148,7 +170,7 @@ export const coursework = [
   },
   {
     id: 'business',
-    icon: 'Building2',
+    tab: 'Business & IS',
     title: 'Business & Information Systems',
     blurb: 'Where technology meets organisations: systems, projects, management and enterprise.',
     units: [
@@ -162,59 +184,64 @@ export const coursework = [
   },
   {
     id: 'security',
-    icon: 'ShieldCheck',
+    tab: 'Security',
     title: 'Security',
     blurb: 'Protecting systems and the networks that connect them.',
     units: ['Systems Security', 'Computer Network Security'],
   },
 ]
 
-export const skills = {
-  technical: [
-    {
-      icon: 'Wrench',
-      title: 'IT & Technical Support',
-      text: 'Hardware and software troubleshooting, computer networking and CCTV camera installation.',
-    },
-    {
-      icon: 'ShieldCheck',
-      title: 'Network Security',
-      text: 'Threat identification, principles of encryption, integrity, authentication and access control.',
-    },
-    {
-      icon: 'Code2',
-      title: 'Web, Mobile & Design',
-      text: 'Website development, strategy and optimisation, mobile app development and computer graphics design.',
-    },
-    {
-      icon: 'Glasses',
-      title: 'Immersive Technologies',
-      text: 'Hands-on introduction to virtual and augmented reality (VR & AR) during industrial training.',
-    },
-    {
-      icon: 'FileSpreadsheet',
-      title: 'Computer Skills & MS Office',
-      text: 'Everyday productivity tools for documents, spreadsheets and presentations.',
-    },
-  ],
-  professional: [
-    { icon: 'MessageCircle', title: 'Effective Communication' },
-    { icon: 'HeartHandshake', title: 'Emotional Intelligence' },
-    { icon: 'Users', title: 'Leadership & Team Building' },
-    { icon: 'Lightbulb', title: 'Creativity & Problem-Solving' },
-    { icon: 'Clock', title: 'Time Management' },
-    { icon: 'Landmark', title: 'Entrepreneurship, Branding & Marketing' },
-    { icon: 'CalendarCheck', title: 'Event Organisation' },
-  ],
-}
+// kind: 'technical' (blue marker) or 'professional' (peach marker)
+export const skillGroups = [
+  {
+    title: 'IT & Technical Support',
+    kind: 'technical',
+    items: ['Hardware troubleshooting', 'Software troubleshooting', 'Computer networking', 'CCTV camera installation'],
+  },
+  {
+    title: 'Network Security',
+    kind: 'technical',
+    items: ['Threat identification', 'Principles of encryption', 'Authentication', 'Access control'],
+  },
+  {
+    title: 'Software & Digital',
+    kind: 'technical',
+    items: [
+      'Website development',
+      'Website strategy and optimisation',
+      'Mobile application development',
+      'Computer graphics design',
+      'Immersive technologies (VR & AR)',
+      'Computer skills and MS Office',
+    ],
+  },
+  {
+    title: 'Business & Leadership',
+    kind: 'professional',
+    items: ['Entrepreneurship', 'Team building', 'Branding and marketing', 'Strategic execution', 'Event organisation'],
+  },
+  {
+    title: 'Soft Skills',
+    kind: 'professional',
+    wide: true,
+    items: [
+      'Effective communication',
+      'Emotional intelligence',
+      'Personal effectiveness',
+      'Creativity and problem-solving',
+      'Employability skills',
+      'Time management',
+      'Teamwork',
+    ],
+  },
+]
 
 export const experience = [
   {
-    icon: 'Briefcase',
     role: 'Industrial Trainee',
     org: 'The WIT Technologies',
     period: 'June – July 2025',
-    tag: 'Two-month industrial training · certified',
+    note: 'Two-month industrial training, certified',
     points: [
       'Hands-on hardware and software troubleshooting.',
       'Practical computer networking and CCTV camera installation.',
@@ -224,11 +251,10 @@ export const experience = [
     ],
   },
   {
-    icon: 'HandHelping',
     role: 'Volunteer Coordinator',
     org: 'ASSU Mock Examinations',
     period: 'June – July, 2023 – 2026',
-    tag: 'Four consecutive years',
+    note: 'Four consecutive years',
     points: [
       'Managed logistics and coordinated technical and physical operations during mock examinations.',
       'Developed strong organisational, leadership and time management skills.',
@@ -240,55 +266,48 @@ export const experience = [
 
 export const leadership = [
   {
-    icon: 'ClipboardList',
     role: 'Secretary, Educate Club (Entrepreneurship)',
     org: 'Ntungamo High School',
-    period: '2021/2022',
+    period: '2021/22',
     text: 'Recognised for outstanding performance and a valuable contribution to the school. Built early leadership, organisation and record-keeping skills.',
   },
   {
-    icon: 'Users',
     role: 'Dorm Captain',
     org: 'Ntungamo High School',
-    period: '2017/2018',
+    period: '2017/18',
     text: 'Recognised for exemplary, dedicated service. Looked after student welfare, kept discipline and coordinated dormitory activities.',
   },
   {
-    icon: 'Trophy',
     role: 'Volleyball Diplomas',
     org: 'National Volleyball Federation of Uganda',
     period: '2012',
-    text: 'Awarded for taking part in the 1st and 2nd Mbarara Cool-Volley Tournaments at Maryhill High School (March and October 2012).',
+    text: 'Awarded for taking part in the 1st and 2nd Mbarara Cool-Volley Tournaments at Maryhill High School, in March and October 2012.',
   },
 ]
 
-export const training = [
+export const certifications = [
   {
-    icon: 'Compass',
     title: 'Watoto Leadership 101',
     issuer: 'Watoto Church, Mbarara',
-    date: 'Aug 2026',
+    date: 'August 2026',
     text: 'Leadership training focused on character development, compassion and integrity in service.',
     tags: ['Character', 'Compassion', 'Integrity'],
   },
   {
-    icon: 'Globe',
     title: 'Website Strategy, Enhancement & Optimisation',
     issuer: 'African Population and Health Research Center (APHRC)',
-    date: 'Mar 2026',
+    date: 'March 2026',
     text: 'Training on website strategy, enhancement and optimisation techniques.',
     tags: ['Web strategy', 'Optimisation', 'Enhancement'],
   },
   {
-    icon: 'MessageCircle',
     title: 'Soft Skills Training',
     issuer: 'BrighterMonday Uganda, with the Mastercard Foundation',
-    date: 'Sep 2025',
+    date: 'September 2025',
     text: 'Effective communication, personal effectiveness, emotional intelligence, employability skills, and creativity and problem-solving.',
     tags: ['Communication', 'Emotional intelligence', 'Employability'],
   },
   {
-    icon: 'Landmark',
     title: 'NSSF Hi-Innovator Business Foundational Course',
     issuer: 'NSSF Hi-Innovator, supported by UCE Innovation Hub',
     date: 'May 2025',
@@ -296,25 +315,17 @@ export const training = [
     tags: ['Entrepreneurship', 'Branding & marketing', 'Finance'],
   },
   {
-    icon: 'ShieldCheck',
     title: 'Network Security',
     issuer: 'The Open University (OpenLearn)',
-    date: 'Feb 2025',
+    date: 'February 2025',
     text: 'Network vulnerabilities, threats to communication networks, principles of encryption, integrity, authentication and access control.',
     tags: ['Threats', 'Encryption', 'Access control'],
   },
   {
-    icon: 'BookOpen',
     title: 'Discipleship & Mentorship Programmes',
     issuer: 'Watoto Church, Mbarara',
     date: '2023 – 2025',
-    text: 'Apples of Gold (2023 and 2025), Equip Streams (Oct 2024) and Growing in Prayer (Jul 2025), focused on character, integrity and community service.',
+    text: 'Apples of Gold (2023 and 2025), Equip Streams (October 2024) and Growing in Prayer (July 2025), focused on character, integrity and community service.',
     tags: ['Apples of Gold', 'Equip Streams', 'Growing in Prayer'],
   },
-]
-
-export const languages = [
-  { name: 'English', level: 'Very fluent' },
-  { name: 'Runyankole', level: 'Fluent' },
-  { name: 'Luganda', level: 'Fluent' },
 ]

@@ -1,52 +1,47 @@
 /** @type {import('tailwindcss').Config} */
-// Grey for ground, blue for action, peach for warmth, black for weight.
+// Palette: blue is the identity colour, peach is a sparing accent, grey is ground, charcoal is type.
+// The brand blue (#547BA6) is 4.4:1 on white, so it is used for large type and fills only.
+// Small text, links and buttons use blue-700 (6.9:1) or blue-600 (6.0:1).
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        grey: {
-          50: '#F7F7F8',
-          100: '#EFF0F2',
-          200: '#E3E5E9',
-          300: '#CDD1D7',
-          400: '#9CA2AB',
-          500: '#646B75', // muted text, AA on grey-50 and white
-          700: '#3A3F47',
+        charcoal: {
+          DEFAULT: '#252A32',
+          soft: '#3A404A', // body copy
+          muted: '#5A606A', // secondary text: 6.3:1 on white, 5.1:1 on grey
+          deep: '#1C2026',
         },
         blue: {
-          50: '#EEF2FD',
-          100: '#DCE4FB',
-          200: '#B9C8F6',
-          300: '#8CA6F0',
-          500: '#2F5BEA',
-          600: '#2449C7', // primary: buttons, links
-          700: '#1C3A9E',
-          900: '#0F1F52',
+          DEFAULT: '#547BA6',
+          50: '#F1F5F9',
+          100: '#DFE7F0',
+          200: '#BFD0E2',
+          600: '#416591',
+          700: '#3B5C80',
+          800: '#2E4866',
         },
         peach: {
-          50: '#FEF6F1',
-          100: '#FDEEE4',
-          200: '#F9DCC8',
-          300: '#F4C3A3',
-          400: '#EEA882',
-          700: '#94431D', // peach-family text, AA on peach-100
+          DEFAULT: '#F5BFAE',
+          50: '#FDF4F0',
+          100: '#FBE7DF',
+          700: '#8A4A36', // peach-family text, 6:1 on peach-50
         },
-        ink: {
-          DEFAULT: '#0C0E12',
-          soft: '#1A1D23',
-          line: '#2A2E36',
+        grey: {
+          DEFAULT: '#E9EAED',
+          50: '#F5F6F8',
+          300: '#D5D8DD',
+          400: '#B4B8BF',
         },
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
-        serif: ['Newsreader', 'Georgia', 'serif'],
+        sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+        display: ['Newsreader', 'Georgia', 'serif'],
       },
-      maxWidth: { frame: '76rem' },
-      letterSpacing: { label: '0.14em' },
+      maxWidth: { frame: '74rem' },
       boxShadow: {
-        card: '0 1px 2px rgba(12,14,18,0.04), 0 8px 24px -12px rgba(12,14,18,0.10)',
-        lift: '0 2px 4px rgba(12,14,18,0.05), 0 18px 40px -18px rgba(28,58,158,0.28)',
+        soft: '0 1px 2px rgba(37,42,50,0.04), 0 12px 32px -16px rgba(37,42,50,0.16)',
       },
     },
   },

@@ -1,88 +1,77 @@
-import { GraduationCap } from 'lucide-react'
-import { education } from '../../data/content.js'
-import { Reveal, Section } from '../ui/index.jsx'
+import { degree, schooling } from '../../data/content.js'
+import { Reveal, Section, SubHeading } from '../ui/index.jsx'
+import Coursework from './Coursework.jsx'
+
+function DegreeCard() {
+  return (
+    <Reveal as="article" className="relative overflow-hidden rounded-xl bg-blue-700 p-7 text-white sm:p-10">
+      {/* A single quarter-disc in the corner, echoing the hero */}
+      <span
+        className="absolute -right-14 -top-14 h-40 w-40 rounded-full border-[14px] border-peach/90 sm:-right-10 sm:-top-10"
+        aria-hidden="true"
+      />
+      <p className="relative text-[0.95rem] font-medium text-white/80">{degree.period}</p>
+      <h3 className="relative mt-3 max-w-md font-display text-[2rem] font-medium leading-[1.08] tracking-[-0.01em] sm:text-[2.6rem]">
+        {degree.title}
+      </h3>
+      <p className="relative mt-3 text-white/85">{degree.school}</p>
+
+      <dl className="relative mt-10 grid gap-6 border-t border-white/20 pt-7 sm:grid-cols-3 sm:gap-4">
+        {degree.facts.map((f) => (
+          <div key={f.term}>
+            <dt className="text-sm text-white/75">{f.term}</dt>
+            <dd className="mt-1 font-display text-xl leading-snug sm:text-[1.35rem]">{f.detail}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <a
+        href="#coursework"
+        className="relative mt-9 inline-block text-[0.95rem] font-semibold underline decoration-white/40 underline-offset-[6px] transition-colors hover:decoration-peach"
+      >
+        Browse the coursework
+      </a>
+    </Reveal>
+  )
+}
 
 export default function Education() {
   return (
     <Section
       id="education"
-      index="02"
-      eyebrow="Education"
-      title="A steady path to Information Technology."
-      intro="From primary school in Mbarara to a degree in Information Technology, every stage built on the last."
-      className="border-y border-grey-200 bg-white"
+      title="Education"
+      note="From primary school in Mbarara to a degree in Information Technology."
     >
-      <ol className="relative">
-        {/* Timeline spine */}
-        <span
-          className="absolute bottom-6 left-[1.1rem] top-6 w-px bg-gradient-to-b from-blue-600 via-grey-300 to-grey-200 sm:left-[11.6rem]"
-          aria-hidden="true"
-        />
-        {education.map((e, i) => (
-          <Reveal as="li" key={e.title} delay={i * 80} className="relative grid gap-2 pb-8 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-14">
-            <div className="hidden pt-6 text-right sm:block">
-              <p className="text-sm font-extrabold tracking-tight">{e.period}</p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-label text-grey-500">{e.level}</p>
-            </div>
+      <DegreeCard />
 
-            {/* Marker */}
-            <span
-              className={`absolute left-[0.45rem] top-6 flex h-[1.35rem] w-[1.35rem] items-center justify-center rounded-full ring-4 ring-white sm:left-[10.95rem] ${
-                e.highlight ? 'bg-blue-600' : 'border border-grey-300 bg-white'
-              }`}
-              aria-hidden="true"
+      <div className="mt-14">
+        <Reveal>
+          <SubHeading>Before university</SubHeading>
+        </Reveal>
+        <ol className="mt-5 border-b border-grey-300">
+          {schooling.map((s, i) => (
+            <Reveal
+              as="li"
+              key={s.short}
+              delay={i * 60}
+              className="grid gap-1 border-t border-grey-300 py-6 sm:grid-cols-[8.5rem_1fr] sm:gap-6"
             >
-              <span className={`h-1.5 w-1.5 rounded-full ${e.highlight ? 'bg-peach-300' : 'bg-grey-400'}`} />
-            </span>
-
-            <article
-              className={`ml-12 rounded-2xl border p-6 transition-shadow sm:ml-0 ${
-                e.highlight
-                  ? 'border-blue-100 bg-gradient-to-br from-blue-50 to-white shadow-card'
-                  : 'border-grey-200 bg-grey-50/60'
-              }`}
-            >
-              <p className="mb-2 text-xs font-bold uppercase tracking-label text-grey-500 sm:hidden">
-                {e.period} · {e.level}
-              </p>
-              <div className="flex items-start justify-between gap-4">
+              <p className="text-sm font-medium tabular-nums text-charcoal-muted sm:pt-1">{s.period}</p>
+              <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-6">
                 <div>
-                  <h3 className="text-lg font-bold leading-snug tracking-tight">{e.title}</h3>
-                  <p className="mt-1 text-sm text-grey-500">{e.school}</p>
+                  <h4 className="font-display text-xl leading-snug">
+                    {s.title} <span className="text-charcoal-muted">({s.short})</span>
+                  </h4>
+                  <p className="mt-1 text-charcoal-muted">{s.school}</p>
                 </div>
-                {e.highlight && (
-                  <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-ink px-3 py-1 text-xs font-bold text-white sm:inline-flex">
-                    <GraduationCap className="h-3.5 w-3.5 text-peach-300" aria-hidden="true" />
-                    Graduate
-                  </span>
-                )}
+                <p className="shrink-0 text-sm font-medium text-blue-700 md:text-right">{s.result}</p>
               </div>
-              {e.details && (
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {e.details.map((d) => (
-                    <li
-                      key={d}
-                      className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                        e.highlight ? 'bg-white text-blue-700 ring-1 ring-blue-100' : 'bg-white text-grey-700 ring-1 ring-grey-200'
-                      }`}
-                    >
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {e.highlight && (
-                <a
-                  href="#coursework"
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-600 underline decoration-blue-200 underline-offset-4 transition-colors hover:decoration-blue-600"
-                >
-                  View coursework
-                </a>
-              )}
-            </article>
-          </Reveal>
-        ))}
-      </ol>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+
+      <Coursework />
     </Section>
   )
 }
