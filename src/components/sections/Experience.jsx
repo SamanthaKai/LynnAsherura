@@ -52,7 +52,7 @@ export default function Experience() {
 
       <div className="mt-16">
         <Reveal>
-          <SubHeading>Leadership &amp; extra-curricular</SubHeading>
+          <SubHeading>Leadership &amp; community</SubHeading>
         </Reveal>
         <ul className="mt-5 border-b border-grey-300">
           {leadership.map((l, i) => (

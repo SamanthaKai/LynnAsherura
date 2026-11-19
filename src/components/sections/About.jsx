@@ -1,9 +1,9 @@
-import { about, languages, qualities } from '../../data/content.js'
+import { about, languages } from '../../data/content.js'
 import { Reveal, Section, SubHeading } from '../ui/index.jsx'
 
 export default function About() {
   return (
-    <Section id="about" title="About" note="Background, interests and what I bring to a team." tone="mist">
+    <Section id="about" title="About" note="Background, interests and the languages I work in." tone="mist">
       <Reveal>
         <p className="font-display text-[1.9rem] leading-[1.18] tracking-[-0.01em] sm:text-[2.5rem]">
           {about.lede.before}
@@ -45,20 +45,6 @@ export default function About() {
             </dl>
           </div>
         </Reveal>
-      </div>
-
-      <div className="mt-16 sm:mt-20">
-        <Reveal>
-          <SubHeading>What I bring</SubHeading>
-        </Reveal>
-        <ul className="mt-6 grid gap-x-10 sm:grid-cols-2">
-          {qualities.map((q, i) => (
-            <Reveal as="li" key={q.title} delay={(i % 2) * 60} className="border-t border-grey-300 py-5">
-              <h4 className="font-semibold">{q.title}</h4>
-              <p className="mt-1.5 leading-relaxed text-charcoal-muted">{q.text}</p>
-            </Reveal>
-          ))}
-        </ul>
       </div>
     </Section>
   )

@@ -10,7 +10,8 @@ export const profile = {
   location: 'Mbarara, Uganda',
   university: 'Mbarara University of Science and Technology',
   intro:
-    'An Information Technology graduate from Mbarara University of Science and Technology, certified in network security and website optimisation, with hands-on training in technical support, networking and web development.',
+    'Hands-on training in technical support, networking and web development, with certificates in network security and website optimisation. Detail-oriented, quick to learn and ready to put it to work.',
+  cv: '/Asherura_Marilynn_CV.pdf',
   // Public profiles (e.g. { label: 'LinkedIn', href: 'https://…' }). Add real ones only;
   // the contact section lists them automatically. Email and phone stay private.
   links: [],
@@ -33,16 +34,16 @@ export const nav = [
 export const heroFacts = [
   { term: 'Degree', detail: 'BIT, Second Class Upper' },
   { term: 'CGPA', detail: '3.69' },
-  { term: 'Graduated', detail: '29 October 2026' },
-  { term: 'Languages', detail: 'English, Runyankole, Luganda' },
+  { term: 'Certified in', detail: 'Network security, web optimisation' },
+  { term: 'Industrial training', detail: 'The WIT Technologies' },
 ]
 
 export const about = {
   // The marked word gets a soft peach underline.
   lede: { before: 'I enjoy the point where technology meets the ', mark: 'people', after: ' who use it.' },
   paragraphs: [
-    'I’m Asherura, a detail-oriented Information Technology graduate from Mbarara University of Science and Technology, where I earned a Bachelor of Information Technology with Second Class Upper Honours and a CGPA of 3.69.',
-    'I’m certified in Network Security through The Open University and in Website Strategy, Enhancement and Optimisation through APHRC. My industrial training at The WIT Technologies gave me hands-on experience in hardware and software troubleshooting, networking, CCTV installation and web development.',
+    'I’m Asherura. My degree at Mbarara University of Science and Technology covered software, data, networks, security and information systems, and I graduated in October 2026 with Second Class Upper Honours.',
+    'Alongside my studies I earned a Network Security certificate from The Open University and completed APHRC’s course in Website Strategy, Enhancement and Optimisation. Two months of industrial training at The WIT Technologies put it into practice: troubleshooting hardware and software, computer networking, CCTV installation, and web and mobile development.',
     'Beyond the technical side, I bring business fundamentals from the NSSF Hi-Innovator course, leadership from school and church roles, and four years of volunteer coordination. I’m looking for opportunities where I can put all of it to work.',
   ],
   interests: [
@@ -53,33 +54,6 @@ export const about = {
     'Entrepreneurship',
   ],
 }
-
-export const qualities = [
-  {
-    title: 'Communication',
-    text: 'Clear, considerate communication with colleagues, customers and the people a team serves.',
-  },
-  {
-    title: 'Teamwork and leadership',
-    text: 'Comfortable working within a team and stepping up to organise when it is needed.',
-  },
-  {
-    title: 'Problem-solving',
-    text: 'Breaks a problem into parts and works through it calmly, one step at a time.',
-  },
-  {
-    title: 'Emotional intelligence',
-    text: 'Reads the room, stays composed and keeps the needs of others in view.',
-  },
-  {
-    title: 'Willingness to learn',
-    text: 'Nine certificates and courses beyond the degree, and always looking for the next one.',
-  },
-  {
-    title: 'Time management',
-    text: 'Plans work around deadlines and follows through on commitments.',
-  },
-]
 
 export const languages = [
   { name: 'English', level: 'Very fluent' },
@@ -266,6 +240,12 @@ export const experience = [
 
 export const leadership = [
   {
+    role: 'Leadership & Discipleship Programmes',
+    org: 'Watoto Church, Mbarara',
+    period: '2023 – 2026',
+    text: 'Leadership 101 (August 2026), focused on character, compassion and integrity in service, alongside Apples of Gold (2023 and 2025), Equip Streams (October 2024) and Growing in Prayer (July 2025).',
+  },
+  {
     role: 'Secretary, Educate Club (Entrepreneurship)',
     org: 'Ntungamo High School',
     period: '2021/22',
@@ -277,22 +257,9 @@ export const leadership = [
     period: '2017/18',
     text: 'Recognised for exemplary, dedicated service. Looked after student welfare, kept discipline and coordinated dormitory activities.',
   },
-  {
-    role: 'Volleyball Diplomas',
-    org: 'National Volleyball Federation of Uganda',
-    period: '2012',
-    text: 'Awarded for taking part in the 1st and 2nd Mbarara Cool-Volley Tournaments at Maryhill High School, in March and October 2012.',
-  },
 ]
 
 export const certifications = [
-  {
-    title: 'Watoto Leadership 101',
-    issuer: 'Watoto Church, Mbarara',
-    date: 'August 2026',
-    text: 'Leadership training focused on character development, compassion and integrity in service.',
-    tags: ['Character', 'Compassion', 'Integrity'],
-  },
   {
     title: 'Website Strategy, Enhancement & Optimisation',
     issuer: 'African Population and Health Research Center (APHRC)',
@@ -320,12 +287,5 @@ export const certifications = [
     date: 'February 2025',
     text: 'Network vulnerabilities, threats to communication networks, principles of encryption, integrity, authentication and access control.',
     tags: ['Threats', 'Encryption', 'Access control'],
-  },
-  {
-    title: 'Discipleship & Mentorship Programmes',
-    issuer: 'Watoto Church, Mbarara',
-    date: '2023 – 2025',
-    text: 'Apples of Gold (2023 and 2025), Equip Streams (October 2024) and Growing in Prayer (July 2025), focused on character, integrity and community service.',
-    tags: ['Apples of Gold', 'Equip Streams', 'Growing in Prayer'],
   },
 ]

@@ -25,3 +25,8 @@ Set `VITE_WEB3FORMS_KEY` (see `.env.example`) in a local `.env` file or in the V
 - `src/components/ui/`: shared building blocks (`Section` gives every section its sticky-title editorial layout)
 - `tailwind.config.js`: palette. Brand blue `#547BA6` is for large type and fills only; small text and buttons use `blue-600`/`blue-700` for AA contrast
 - `src/hooks/`: scroll reveal and active-section tracking
+
+## CV and share image
+
+- `cv/cv.html` is the source of `public/Asherura_Marilynn_CV.pdf`. Edit it, then print it to PDF with Edge or Chrome (`--headless=new --no-pdf-header-footer --print-to-pdf=...`). It deliberately leaves out phone, email, date of birth and referees.
+- `cv/og-image.html` is the 1200×630 link-preview card. Screenshot it at that size and save as `public/og-image.jpg`.

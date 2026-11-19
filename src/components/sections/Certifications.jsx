@@ -6,7 +6,7 @@ export default function Certifications() {
     <Section
       id="certifications"
       title="Certifications"
-      note="Courses completed alongside and after my degree, most recent first."
+      note="Professional courses completed alongside and after my degree, most recent first."
       tone="mist"
     >
       <ul className="grid gap-4 md:grid-cols-2">

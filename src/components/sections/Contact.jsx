@@ -227,6 +227,18 @@ export default function Contact() {
               <dt className="text-sm text-white/65">Replies</dt>
               <dd className="text-right font-medium">To the email you provide</dd>
             </div>
+            <div className="flex items-baseline justify-between gap-6 py-4">
+              <dt className="text-sm text-white/65">CV</dt>
+              <dd>
+                <a
+                  href={profile.cv}
+                  download
+                  className="font-medium underline decoration-white/30 underline-offset-4 transition-colors hover:text-peach hover:decoration-peach"
+                >
+                  Download PDF
+                </a>
+              </dd>
+            </div>
             {profile.links.length > 0 && (
               <div className="flex items-baseline justify-between gap-6 py-4">
                 <dt className="text-sm text-white/65">Elsewhere</dt>

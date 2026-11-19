@@ -12,12 +12,12 @@ function Portrait() {
         aria-hidden="true"
       />
       <img
-        src="/images/asherura-800.webp"
-        srcSet="/images/asherura-480.webp 480w, /images/asherura-800.webp 800w"
+        src="/images/asherura-576.webp"
+        srcSet="/images/asherura-480.webp 480w, /images/asherura-576.webp 576w"
         sizes="(min-width: 640px) 25rem, 88vw"
-        width="800"
-        height="1000"
-        alt="Portrait of Asherura Marilynn, smiling, in a red dress"
+        width="576"
+        height="720"
+        alt="Head-and-shoulders portrait of Asherura Marilynn, smiling"
         fetchpriority="high"
         decoding="async"
         className="relative aspect-[4/5] w-full rounded-xl bg-grey object-cover object-top"
@@ -61,6 +61,15 @@ export default function Hero() {
             <ButtonLink href="#contact" variant="secondary">
               Get in touch
             </ButtonLink>
+          </Reveal>
+          <Reveal delay={220}>
+            <a
+              href={profile.cv}
+              download
+              className="mt-6 inline-block text-[0.95rem] font-semibold text-blue-700 underline decoration-blue-200 decoration-2 underline-offset-[6px] transition-colors hover:decoration-blue-700"
+            >
+              Download my CV <span className="font-normal text-charcoal-muted">(PDF)</span>
+            </a>
           </Reveal>
         </div>
 
